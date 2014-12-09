@@ -1,0 +1,207 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.5
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost:8889
+-- Generation Time: Dec 08, 2014 at 04:29 AM
+-- Server version: 5.5.38
+-- PHP Version: 5.5.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `web_final`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+`cmtId` int(10) NOT NULL,
+  `postId` int(10) NOT NULL,
+  `replyCmtId` int(10) NOT NULL,
+  `userId` int(5) NOT NULL,
+  `creationTime` datetime NOT NULL,
+  `text` varchar(200) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=61 ;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`cmtId`, `postId`, `replyCmtId`, `userId`, `creationTime`, `text`) VALUES
+(57, 53, 1, 3, '2014-12-07 21:42:03', 'Looks good!'),
+(58, 51, 1, 3, '2014-12-07 21:43:08', 'Is it still available?'),
+(59, 50, 1, 2, '2014-12-07 21:43:47', 'Such a cute dress!!'),
+(60, 54, 1, 6, '2014-12-07 21:44:57', 'So nice~');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contactInfo`
+--
+
+CREATE TABLE `contactInfo` (
+`userId` int(5) NOT NULL,
+  `call_1` varchar(15) DEFAULT NULL,
+  `call_2` varchar(15) DEFAULT NULL,
+  `text_1` varchar(15) DEFAULT NULL,
+  `text_2` varchar(15) DEFAULT NULL,
+  `email_1` varchar(30) DEFAULT NULL,
+  `email_2` varchar(30) DEFAULT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `contactInfo`
+--
+
+INSERT INTO `contactInfo` (`userId`, `call_1`, `call_2`, `text_1`, `text_2`, `email_1`, `email_2`) VALUES
+(3, '3123', '', '', '', 'test2@gmail.com', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedTag`
+--
+
+CREATE TABLE `feedTag` (
+  `userId` int(5) NOT NULL,
+  `tag` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feedTag`
+--
+
+INSERT INTO `feedTag` (`userId`, `tag`) VALUES
+(1, 'g');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post`
+--
+
+CREATE TABLE `post` (
+`postId` int(10) NOT NULL,
+  `creationTime` timestamp NULL DEFAULT NULL,
+  `userId` int(5) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '0',
+  `title` varchar(50) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `condi` int(1) DEFAULT NULL,
+  `price` float NOT NULL,
+  `body` varchar(500) NOT NULL,
+  `imgUrl` varchar(500) DEFAULT NULL,
+  `likeCount` int(255) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=55 ;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`postId`, `creationTime`, `userId`, `status`, `title`, `type`, `condi`, `price`, `body`, `imgUrl`, `likeCount`) VALUES
+(43, '2014-12-08 02:10:29', 1, NULL, 'MOVING SALE! Desk, chairs', 'd', 4, 30, 'EVERYTHING MUST GO!\r\nDesk (dark chocolate color), almost new - $30.\r\nChair (fuchsia), almost new - $30.\r\nBoth desk and chair - $55.\r\n\r\nEverything is clean and ready for pick-up in Shadyside on Walnut St any time on weekends, and after 4 PM on Mn- Fr.', '/2560_final/userImages/desk.jpg', 0),
+(44, '2014-12-08 02:12:35', 1, NULL, 'Golden Arm Chair', 'd', 4, 25, 'Comfy firm arm chair for sale! Excellent condition.\r\nPick up only ~', '/2560_final/userImages/2.jpg', 0),
+(45, '2014-12-08 02:15:32', 3, NULL, 'Catching Fire & Mockingjay by Suzanne Collins', 'b', 4, 10, 'Selling the two great books shown in the picture...\r\nIf your interested, email, text (quicker) or call', '/2560_final/userImages/3.jpg', 1),
+(46, '2014-12-08 02:19:14', 3, NULL, 'College Books', 'a', 4, 30, 'I have the following College books for sale. All books are in good condition. No tears or missing pages. All books were used for CCAC courses.\r\n\r\nManagement (11th edition)- by Stephen P. Robbins & Mary Coulter\r\n\r\nVisualizing Psychology (2nd edition)- by Siri Carpenter & Karen Huffman\r\n\r\nUnderstanding Business (9th edition)- by Nickels, McHugh, McHugh', '/2560_final/userImages/4.jpg', 0),
+(47, '2014-12-08 02:20:15', 3, NULL, 'Ccac 12th edition business book', 'a', 4, 50, 'I am selling my twelfth edition business book. Used it for my ccac online class. I hadC. Lee as my professor.', '/2560_final/userImages/5.jpg', 0),
+(48, '2014-12-08 02:23:08', 2, NULL, 'Women''s Boots and shoes, some new, size 8!!', 'g', 3, 23, 'NEW with box Rampage black boots-$23', '/2560_final/userImages/6.jpg', 0),
+(49, '2014-12-08 02:26:18', 2, NULL, 'Pullover Sweatshirt', 'f', 4, 28, 'Pullover sweatshirt with leopard print cross graphic on the front. Fits true to size.\r\n\r\nAvailable in sizes: Small, Medium, Large', '/2560_final/userImages/7.jpg', 0),
+(50, '2014-12-08 02:27:45', 2, NULL, 'White House Black Market', 'f', 4, 25, 'White House Black Market dress\r\nSize: 6\r\nWorn twice\r\nAsking: $25 or best offer', '/2560_final/userImages/00H0H_11tWBkWg9CH_600x450.jpg', 1),
+(51, '2014-12-08 02:34:31', 6, NULL, 'Excellent Apartment Size Refrigerator FrostFree', 'c', 3, 95, 'Frig 24 inches across the front. about 5 feet tall (I can measure for certain, if needed) Please call for details. We would like to get these sold ASAP.', '/2560_final/userImages/8.jpg', 0),
+(52, '2014-12-08 02:35:25', 6, NULL, 'Vaccuum Cleaner', 'e', 4, 25, 'Dirt Devil, 12 amp, bagless vacuum cleaner. Has an attached wand cleaner to facilitate cleaning with attachments.', '/2560_final/userImages/10.jpg', 0),
+(53, '2014-12-08 02:39:06', 6, NULL, 'Myst 1 and Riven Myst 2 complete for pc', 'j', 1, 5, 'I''m selling my copy of myst and myst 2. Must does come with the strategy guide. Both games are complete and in like new condition. $5.00 gets you both games. Text or call Steven.', '/2560_final/userImages/11.jpg', 0),
+(54, '2014-12-08 02:41:03', 3, NULL, 'Sony Wega 42" HD TV with Stand', 'h', 4, 100, '42" Sony Wega TV works great selling only because bought new larger TV. Comes with stand that fits TV perfect.', '/2560_final/userImages/12.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+`uid` int(11) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `creationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `gender` varchar(10) DEFAULT NULL,
+  `details` varchar(200) DEFAULT NULL,
+  `reputation` int(10) DEFAULT '0'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`uid`, `email`, `username`, `password`, `creationDate`, `gender`, `details`, `reputation`) VALUES
+(1, 'bill@pitt.edu', 'bill', '123', '2014-12-07 03:32:36', 'female', 'I am bill', 0),
+(2, 'mary@pitt.edu', 'mary', '123', '2014-11-27 05:00:00', '', '', 0),
+(3, 'joe@pitt.edu', 'joe', '123', '2014-12-07 19:06:00', 'male', 'cool guy', NULL),
+(4, 'sil29@pitt.edu', 'siwei', 'aywwai', '2014-12-04 03:13:29', 'male', 'Nice!', NULL),
+(5, '123@pitt.edu', 'huge', 'huge', '2014-12-05 10:35:05', 'male', 'dsafdafdas', NULL),
+(6, 'aa@pitt.edu', 'aa', '1', '2014-12-07 22:03:35', 'female', 'test', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+ ADD PRIMARY KEY (`cmtId`);
+
+--
+-- Indexes for table `contactInfo`
+--
+ALTER TABLE `contactInfo`
+ ADD PRIMARY KEY (`userId`);
+
+--
+-- Indexes for table `feedTag`
+--
+ALTER TABLE `feedTag`
+ ADD PRIMARY KEY (`userId`,`tag`);
+
+--
+-- Indexes for table `post`
+--
+ALTER TABLE `post`
+ ADD PRIMARY KEY (`postId`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`uid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+MODIFY `cmtId` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=61;
+--
+-- AUTO_INCREMENT for table `contactInfo`
+--
+ALTER TABLE `contactInfo`
+MODIFY `userId` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `post`
+--
+ALTER TABLE `post`
+MODIFY `postId` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
