@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 7, 2014 1:12:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.POJOs.FeedTag" table="feedTag" catalog="web_final" optimistic-lock="version">
+        <composite-id name="id" class="com.POJOs.FeedTagId">
+            <key-property name="userId" type="int">
+                <column name="userId" />
+            </key-property>
+            <key-property name="tag" type="string">
+                <column name="tag" length="20" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

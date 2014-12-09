@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 7, 2014 1:12:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.POJOs.User" table="user" catalog="web_final" optimistic-lock="version">
+        <id name="uid" type="java.lang.Integer">
+            <column name="uid" />
+            <generator class="identity" />
+        </id>
+        <property name="email" type="string">
+            <column name="email" length="20" not-null="true" />
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="20" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="20" not-null="true" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creationDate" length="0" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10" />
+        </property>
+        <property name="details" type="string">
+            <column name="details" length="200" />
+        </property>
+        <property name="reputation" type="java.lang.Integer">
+            <column name="reputation" />
+        </property>
+    </class>
+</hibernate-mapping>

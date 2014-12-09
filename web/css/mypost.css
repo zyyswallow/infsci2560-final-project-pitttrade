@@ -1,0 +1,42 @@
+.navbar-default{
+    background-color: #0099CC !important;
+    
+}
+
+.navbar-default a{
+    color: #ffffff !important;    
+}
+
+.btn-primary{
+    background-color: #0099CC !important;
+}
+
+.row-main{
+    margin-top:10%;
+}
+.panel-body{
+    padding-top: 1% !important;
+}
+.panel-table{
+    padding-top: 1% !important;
+    text-align: center;
+}
+thead{
+    font-size: large;
+}
+.form-group .signup{
+    padding-top: 3% !important;
+}
+
+.modal{
+    margin-top: 10% !important;
+}
+
+.comment{
+    margin: 0.5em 1em 0.5em 1em;
+    padding-bottom: 0.5em;
+}
+.page .pager{
+    margin-left:1em;
+    padding-left: 0.5em;
+}

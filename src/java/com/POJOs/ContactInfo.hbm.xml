@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 7, 2014 1:12:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.POJOs.ContactInfo" table="contactInfo" catalog="web_final" optimistic-lock="version">
+        <id name="userId" type="java.lang.Integer">
+            <column name="userId" />
+            <generator class="identity" />
+        </id>
+        <property name="call1" type="string">
+            <column name="call_1" length="15" />
+        </property>
+        <property name="call2" type="string">
+            <column name="call_2" length="15" />
+        </property>
+        <property name="text1" type="string">
+            <column name="text_1" length="15" />
+        </property>
+        <property name="text2" type="string">
+            <column name="text_2" length="15" />
+        </property>
+        <property name="email1" type="string">
+            <column name="email_1" length="30" />
+        </property>
+        <property name="email2" type="string">
+            <column name="email_2" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

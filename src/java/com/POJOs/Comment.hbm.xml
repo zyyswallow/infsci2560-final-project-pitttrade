@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 7, 2014 1:12:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.POJOs.Comment" table="comment" catalog="web_final" optimistic-lock="version">
+        <id name="cmtId" type="java.lang.Integer">
+            <column name="cmtId" />
+            <generator class="identity" />
+        </id>
+        <property name="postId" type="int">
+            <column name="postId" not-null="true" />
+        </property>
+        <property name="replyCmtId" type="int">
+            <column name="replyCmtId" not-null="true" />
+        </property>
+        <property name="userId" type="int">
+            <column name="userId" not-null="true" />
+        </property>
+        <property name="creationTime" type="timestamp">
+            <column name="creationTime" length="0" not-null="true" />
+        </property>
+        <property name="text" type="string">
+            <column name="text" length="200" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
